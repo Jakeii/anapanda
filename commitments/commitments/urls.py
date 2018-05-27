@@ -35,5 +35,5 @@ urlpatterns = [
     path('kummit/kummitments/make/', kuviews.KummitmentCreate.as_view(), name='kummitment-make'),
     path('kummit/kummitments/<int:pk>/', kuviews.KummitmentView.as_view(), name='kummitment-detail'),
     #path('kummit/kummitments/<int:pk>/delete/', kuviews.KummitmentDelete.as_view(), name='kummitment-delete'),
-    #path('kummit/kummitments/', kuviews.KummitmentList.as_view(), name='kummitment-list'), 
+    path('kummit/kummitments/', kuviews.KummitmentList.as_view(), name='kummitment-list'), 
 ]

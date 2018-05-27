@@ -51,8 +51,8 @@ class TaskView(DetailView):
 
 class TaskList(FilterView):
     model = Task
-    filter_fields = ['created_by', 'circle', 'project', 'role']
-    paginate_by = 5
+    filter_fields = ['created_by', 'task', 'circle', 'project', 'role']
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -75,6 +75,16 @@ class KummitmentCreate(CreateView):
 
 class KummitmentView(DetailView):
     model = Kummitment
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+class KummitmentList(FilterView):
+    model = Kummitment
+    filter_fields = ['kummitor', 'task', 'deadline', 'needhelp', 'status']
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
