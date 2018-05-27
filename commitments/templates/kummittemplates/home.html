@@ -1,0 +1,34 @@
+{% extends 'base.html' %}<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tunapanda Institute</title>
+  </head>
+  <body>
+    <h1>Learning, Earning, and Problem Solving</h1>
+    {% block content %}
+    <h2>Circles</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Circle</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for circle in circles %}
+            <tr>
+              <td>
+                {{ circle.name }}<br>
+                <small style="color: #888">Lead:  {{ circle.leadlink }}</small>
+              </td>
+              <td>
+                {{ circle.purpose }}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endblock %}
+  </body>
+</html>

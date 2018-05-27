@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'kummithome' %}">Kummit</a></li>
+{# <li class="breadcrumb-item"><a href="{% url 'kummitment-list' %}">Kummitments</a></li> #}
+<li class="breadcrumb-item active">View Kummitment</li>
+{% endblock %}
+
+{% block content %}
+
+<h2>Task</h2>
+<div class="border">
+  <h4><a href="{% url 'task-detail' kummitment.task.id %}">{{ kummitment.task.subject }}</a> <small>(kummitted)</small></h4>
+  <p>Description:  {{ kummitment.task.description }} <br>
+  Evidence of done:  {{ kummitment.task.doneevidence }} <br>
+  Deadline:  {{ kummitment.task.deadline }}</p>
+  {% if task.circle %} <p>Circle:  {{ kummitment.task.circle }}</p> {% endif %}
+  {% if task.role %} <p>Role:  {{ kummitment.task.role }}</p> {% endif %}
+  {% if task.project %} <p>Project:  {{ kummitment.task.project }}</p> {% endif %}
+  <p style="font-size: 50%;">Creator:  {{ kummitment.task.created_by }} * Created: {{ kummitment.task.last_update }} * Start:  {{ kummitment.task.startdate }} * Last edit:  {{ kummitment.task.last_update }}</p>
+</div>
+
+<h2>Kummitment</h2>
+<h4>{{ kummitment.description }}</h4>
+
+
+{% endblock %}

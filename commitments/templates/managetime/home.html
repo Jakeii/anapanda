@@ -1,0 +1,48 @@
+{% extends 'base.html' %}<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tunapanda Institute</title>
+  </head>
+
+  {% block breadcrumb %}
+  <li class="breadcrumb-item active">Kummit</li>
+  {% endblock %}
+
+    {% block content %}
+  <body>
+    <h1>Learning, Earning, and Problem Solving</h1>
+    <h2>Governance</h2>
+    <p>Member Charter, Pandacracy Constitution</p>
+
+<h2>Structure</h2>
+<p>Circles, Roles</p>
+
+<h2>Activities</h2>
+<p>Projects, Tasks, Kummitments</p>
+
+    <h2>Circle</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Circle</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for circle in circles %}
+            <tr>
+              <td>
+                {{ circle.name }}<br>
+                <small style="color: #888">Lead:  {{ circle.leadlink }}</small>
+              </td>
+              <td>
+                {{ circle.purpose }}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endblock %}
+  </body>
+</html>
