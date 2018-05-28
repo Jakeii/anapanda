@@ -18,6 +18,25 @@ from .filters import TaskFilter
 def kummithome(request):
     return render(request, 'managetime/home.html')
 
+class CircleView(DetailView):
+    model = Circle
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+class CircleList(FilterView):
+    model = Circle
+    filter_fields = []
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+
 # @method_decorator(login_required, name='dispatch')
 class TaskCreate(CreateView):
     model = Task
@@ -51,7 +70,7 @@ class TaskView(DetailView):
 
 class TaskList(FilterView):
     model = Task
-    filter_fields = ['created_by', 'task', 'circle', 'project', 'role']
+    filter_fields = ['created_by', 'description', 'circle', 'project', 'role']
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
@@ -59,9 +78,10 @@ class TaskList(FilterView):
         context['now'] = timezone.now()
         return context
 
+
 class KummitmentCreate(CreateView):
     model = Kummitment
-    fields = ['task', 'kummitor', 'description', 'nextaction', 'possibleobstacles', 'minutesestimate', 'start', 'deadline', 'timescheduled', 'energytype', 'workweek', 'workday', 'worktime', 'status', 'specific', 'measurable', 'achievable', 'relevant', 'timebound', 'healthy', 'wealthy', 'wise', 'connected', 'reflection', 'needhelp']
+    fields = ['task', 'kummitor', 'description', 'nextaction', 'possibleobstacles', 'minutesestimate', 'start', 'deadline', 'energytype', 'weekscheduled', 'dayscheduled', 'timescheduled', 'status', 'specific', 'measurable', 'achievable', 'relevant', 'timebound', 'healthy', 'wealthy', 'wise', 'connected', 'reflection', 'needhelp']
    
     def get_form(self, form_class=None):
        form = super().get_form(form_class)
@@ -84,6 +104,25 @@ class KummitmentView(DetailView):
 class KummitmentList(FilterView):
     model = Kummitment
     filter_fields = ['kummitor', 'task', 'deadline', 'needhelp', 'status']
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+
+class RoleView(DetailView):
+    model = Role
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+class RoleList(FilterView):
+    model = Role
+    filter_fields = ['energizers', 'circle', 'project', 'rolestatus']
     paginate_by = 10
 
     def get_context_data(self, **kwargs):

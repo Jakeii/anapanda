@@ -24,6 +24,8 @@ class Circle(models.Model):
 
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse('circle-detail', kwargs={'pk': self.pk})
 
 class Role(models.Model):
     name = models.CharField(max_length=30)
@@ -41,6 +43,10 @@ class Role(models.Model):
     energizers = models.TextField(max_length=300, blank=True, null=True)
     rolestatus = models.TextField(max_length=30, blank=True, null=True)
     creator = models.TextField(max_length=300, blank=True, null=True)
+    reports = models.TextField(max_length=600, blank=True, null=True)
+
+    def get_absolute_url(self):
+        return reverse('role-detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.name
@@ -57,6 +63,9 @@ class Project(models.Model):
     status = models.TextField(max_length=600)
     weeklyreport = models.TextField(max_length=600)
     last_updated = models.DateTimeField(auto_now_add=True)
+    
+    def get_absolute_url(self):
+        return reverse('project-detail', kwargs={'pk': self.pk})
 
 class Task(models.Model):
     subject = models.CharField(max_length=30)
@@ -92,11 +101,10 @@ class Kummitment(models.Model):
     minutesestimate = models.DurationField(blank=True, null=True)
     start = models.DateTimeField(blank=True, null=True) #can eventually include dependencies on other deliverables
     deadline = models.DateTimeField(auto_now_add=False, blank=True, null=True)
-    timescheduled = models.TextField(max_length=30, blank=True, null=True) # energy, week, day, time
     energytype = models.TextField(max_length=60, blank=True, null=True) # make the next few fields dependent on the answer to this one
-    workweek = models.TextField(max_length=60, blank=True, null=True)
-    workday = models.DateField(auto_now_add=False, blank=True, null=True)
-    worktime = models.TimeField(auto_now_add=False, blank=True, null=True)
+    weekscheduled = models.TextField(max_length=60, blank=True, null=True)
+    dayscheduled = models.DateField(auto_now_add=False, blank=True, null=True)
+    timescheduled = models.TimeField(auto_now_add=False, blank=True, null=True)
     status = models.CharField(max_length=60, blank=True, null=True) # slider 0%, 10%...100%
     # value = models.CharField(max_length=30, blank=True, null=True)
     last_updated = models.DateTimeField(auto_now_add=True)

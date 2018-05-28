@@ -4,7 +4,8 @@
 
 {% block breadcrumb %}
 <li class="breadcrumb-item"><a href="{% url 'kummithome' %}">Kummit</a></li>
-<li class="breadcrumb-item active">Kummitment</li>
+<li class="breadcrumb-item"><a href="{% url 'circle-list' %}">Circles</a></li>
+<li class="breadcrumb-item active">Roles</li>
 {% endblock %}
 
 {% block content %}
@@ -14,15 +15,14 @@
 
     <div class="col-sm-8">
       <br>
-      <h3>Statistics</h3>
-      <strong>Kummitments: 175</strong> <br>
-      - Completed: 92 <br>
-      - Past deadline: 13 <br>
-      - Past kummitment: 8 <br>
-      - In progress: 37 <br>
-      - Not started: 25 <br><br>
-      <strong></strong>
-
+      <h3>Statistics [NOTE: currently fake data]</h3>
+      <strong>Circle roles: 36</strong> <br>
+      - Energized: 34 <br>
+      - Unenergized: 2 <br>
+      - Fully defined: 30 <br>
+      - Not fully defined: 6 <br>
+      - Tasks completed: 50 <br>
+      - Kummitments achieved: 74 <br><br>
 
     </p>
 
@@ -43,20 +43,22 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Kummitment</th>
-        <th>Kummitor</th>
-        <th>Deadline</th>
-        <th>Status</th>
+        <th>Role</th>
+        <th>Circle</th>
+        <th>Energizer(s)</th>
+        <th>Completed tasks</th>
+        <th>Overdue tasks</th>
       </tr>
     </thead>
     <tbody>
-      {% for kummitment in kummitment_list %}
+      {% for role in role_list %}
         <div class="row">
           <tr>
-            <td><a href="{{ kummitment.get_absolute_url }}">{{ kummitment.task }}</a></td>
-            <td>{{ kummitment.kummitor }}</td>
-            <td>{{ kummitment.deadline }}</td>
-            <td>{{ kummitment.status }}</td>
+            <td><a href="{{ role.get_absolute_url }}">{{ role.name }}</a></td>
+            <td>{{ role.circle }}</td>
+            <td>{{ role.energizers }}</td>
+            <td>[TODO]</td>
+            <td>[TODO]</td>
           </tr>
         </div>
       {% endfor %}

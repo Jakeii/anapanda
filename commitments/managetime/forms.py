@@ -2,7 +2,7 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
-from .models import Circle, Role, Task, MemberCommitment, Project
+from .models import Circle, Role, Task, Kummitment, Project
 
 class CreateTask(forms.ModelForm):
     helper = FormHelper()

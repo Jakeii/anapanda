@@ -36,4 +36,8 @@ urlpatterns = [
     path('kummit/kummitments/<int:pk>/', kuviews.KummitmentView.as_view(), name='kummitment-detail'),
     #path('kummit/kummitments/<int:pk>/delete/', kuviews.KummitmentDelete.as_view(), name='kummitment-delete'),
     path('kummit/kummitments/', kuviews.KummitmentList.as_view(), name='kummitment-list'), 
+    path('kummit/circles/<int:pk>/', kuviews.CircleView.as_view(), name='circle-detail'),
+    path('kummit/circles/', kuviews.CircleList.as_view(), name='circle-list'),
+    path('kummit/roles/<int:pk>/', kuviews.RoleView.as_view(), name='role-detail'),
+    path('kummit/roles/', kuviews.RoleList.as_view(), name='role-list'), 
 ]
