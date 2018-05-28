@@ -7,4 +7,6 @@ pip install django
 
 django-admin startproject commitments
 
+requires django-crispy-forms
+
 
