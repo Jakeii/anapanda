@@ -98,7 +98,7 @@ class RoleKummitment(models.Model):
 class Kummitment(models.Model):
     task = models.ForeignKey(Task, on_delete=models.PROTECT)
     kummitor = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True) # default logged in user
-    description = models.TextField(max_length=600)
+    successactions = models.TextField(max_length=600)
     nextaction = models.TextField(max_length=600)
     possibleobstacles = models.TextField(max_length=600)
     minutesestimate = models.DurationField(blank=True, null=True)

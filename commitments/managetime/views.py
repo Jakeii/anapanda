@@ -81,7 +81,7 @@ class TaskList(FilterView):
 
 class KummitmentCreate(CreateView):
     model = Kummitment
-    fields = ['task', 'kummitor', 'description', 'nextaction', 'possibleobstacles', 'minutesestimate', 'start', 'deadline', 'energytype', 'weekscheduled', 'dayscheduled', 'timescheduled', 'status', 'specific', 'measurable', 'achievable', 'relevant', 'timebound', 'healthy', 'wealthy', 'wise', 'connected', 'reflection', 'needhelp']
+    fields = ['task', 'kummitor', 'successactions', 'nextaction', 'possibleobstacles', 'minutesestimate', 'start', 'deadline', 'energytype', 'weekscheduled', 'dayscheduled', 'timescheduled', 'status', 'specific', 'measurable', 'achievable', 'relevant', 'timebound', 'healthy', 'wealthy', 'wise', 'connected', 'reflection', 'needhelp']
    
     def get_form(self, form_class=None):
        form = super().get_form(form_class)
