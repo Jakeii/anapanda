@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<div class="row">
+<div class="row w-50">
   <div class="col-sm-12 col-md-12 col-lg-12">
     <h3 class="text-center">"Define Task"</h3>
         {% if user.is_authenticated %}
@@ -19,10 +19,10 @@
         <h2>Login, please</h2>
         {% endif %}
         <form method="POST">{% csrf_token %}
-          <div class="input-group">
+          <table border="1">
             {% crispy form %}
-          </div>
-      </form>
+          </table>
+        </form>
   </div>
 </div>
 
