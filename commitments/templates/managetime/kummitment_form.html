@@ -18,10 +18,11 @@
         {% else %}
         <h2>Login, please</h2>
         {% endif %}
-        <form method="POST">{% csrf_token %}
-          <div class="input-group">
+        <form method="POST">
+          {% csrf_token %}
+          <table border="1">
             {% crispy form %}
-          </div>
+          </table>
       </form>
   </div>
 </div>

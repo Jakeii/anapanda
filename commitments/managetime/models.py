@@ -82,6 +82,9 @@ class Task(models.Model):
     def get_absolute_url(self):
         return reverse('task-detail', kwargs={'pk': self.pk})
 
+    def __str__(self):
+        return self.subject
+
 class RoleKummitment(models.Model):
     task = models.ForeignKey(Task, on_delete=models.PROTECT)
     description = models.TextField(max_length=600)
@@ -117,8 +120,9 @@ class Kummitment(models.Model):
     wealthy = models.TextField(max_length=600, blank=True, null=True)
     wise = models.TextField(max_length=600, blank=True, null=True)
     connected = models.TextField(max_length=600)
-    reflection = models.TextField(max_length=600)
+    reflection = models.TextField(max_length=600, blank=True, null=True)
     needhelp = models.BooleanField(default=False)
+    problemneedinghelp = models.TextField(max_length=600, blank=True, null=True)
     
     def get_absolute_url(self):
         return reverse('kummitment-detail', kwargs={'pk': self.pk})
