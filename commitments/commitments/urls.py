@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('kummit/<int:pk>/', kuviews.TaskUpdate.as_view(), name='kummit-view'),
     path('kummit/', kuviews.kummithome, name='kummithome'),
-    path('kummit/tasks/make/', kuviews.TaskCreate.as_view(), name='kummit-make'),
+    path('kummit/tasks/make/', kuviews.TaskCreate.as_view(), name='task-create'),
     path('kummit/tasks/<int:pk>/', kuviews.TaskView.as_view(), name='task-detail'),
     path('kummit/tasks/<int:pk>/delete/', kuviews.TaskDelete.as_view(), name='kummit-delete'),
     path('kummit/tasks/', kuviews.TaskList.as_view(), name='task-list'),
