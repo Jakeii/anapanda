@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
-from accounts import views as accounts_views
-from managetime import views as kuviews
+from commitments.apps.accounts import views as accounts_views
+from commitments.apps.managetime import views as kuviews
 
 urlpatterns = [
     path('', kuviews.kummithome, name='home'),
