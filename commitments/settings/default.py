@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     
     'commitments.apps.accounts',
     'commitments.apps.managetime',
+
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [
