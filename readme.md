@@ -11,8 +11,10 @@ $ sudo apt-get install python3.6 python3.6-venv python3.6-dev
 $ python3.6 -m venv ~/.venvs/anapanda
 $ source ~/.venvs/anapanda/bin/activate
 
-$ pip install -r commitments/requirements.txt
-$ pip install --upgrade pip 
+$ pip install -r requirements_dev.pip
+
+$ cd commitments/settings
+$ cp local_settings.py.example local_settings.py
 ```
 
 #Mac
@@ -23,6 +25,8 @@ $ python3.6 -m venv ~/.venvs/anapanda
 
 $ source ~/.venvs/anapanda/bin/activate
 
-$ pip install -r commitments/requirements.txt
-$ pip install --upgrade pip
+$ pip install -r requirements_dev.pip
+
+$ cd commitments/settings
+$ cp local_settings.py.example local_settings.py
 ```
