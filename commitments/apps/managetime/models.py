@@ -55,12 +55,22 @@ class Role(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=60, unique=True)
     circle = models.ForeignKey(Circle, on_delete=models.PROTECT)
+    relatedroles = modles.ForeignKey(Role, on_delete=models.PROTECT)
+    client = models.CharField(max_length=60) # This will be a ForeignKey eventually
+    gigfinding = models.CharField(max_length=60) # Only show if there's a client. Need ForeignKey to Members plus % breakdown
+    gigdoing = models.CharField(max_length=60) # same as above
+    gigmanagement = models.CharField(max_length=60) # same as above
+    gigvalue = models.CharField(max_length=60)
+    gigvaluedetails = models.CharField(max_length=600) # Show what each deliverable is worth as a %, automatically calculationg from total gig
     description = models.TextField(max_length=1000)
+    expectedduration = models.TextField(max_length=100)
     startdate = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(auto_now_add=True)
     projectlead = models.ForeignKey(User, on_delete=models.PROTECT)
+    projectmanager = models.ForeignKey(User, on_delete=models.PROTECT)
     objectives = models.TextField(max_length=1000)
     keyresults = models.TextField(max_length=600)
+    stage = models.TextField(max_length=60) # Multiplechoice: Placeholder for future project, Planning, In progress, Complete, Archived
     status = models.TextField(max_length=600)
     weeklyreport = models.TextField(max_length=600)
     last_updated = models.DateTimeField(auto_now_add=True)
