@@ -1,17 +1,72 @@
 from django import forms
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
-
 from .models import Circle, Role, Task, Kummitment, Project
 
-#class CreateTask(forms.ModelForm):
-#    helper = FormHelper()
-#    helper.form_show_labels = False
-#
-#    def __init__(self, *args, **kwargs):
-#        super(createTask, self)__init__(*args, **kwargs)
-#        self.helper = FormHelper()
-#        self.helper.form_id = 'id-personal-data-form'
-#        self.helper.form_method = 'post'
-#        self.helper.form_action = reverse('submit_form')
-#        self.helper.add_input(Submit('submit', 'Submit'))
+class CircleForm(forms.ModelForm):
+    class Meta:
+        model = Circle
+        fields = [
+            'name', 'purpose',
+            'leadlink', 'replink',
+            'secretary', 'facilitator',
+            'crosslinks', 'strategies',
+            'domains', 'policies',
+            'accountabilities', 'objectives',
+            'metrics', 'birth_date', 'super_circle',
+        ]
+
+class RoleForm(forms.ModelForm):
+    class Meta:
+        model = Role
+        fields = [
+            'name', 'purpose',
+            'domains', 'accountabilities',
+            'successindicators',
+            'circle', 'project',
+            'birthdate', 'monthly_report',
+            'collaborators', 'energizers',
+            'rolestatus', 'creator', 'reports',
+        ]
+
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = [
+            'subject', 
+            'description', 
+            'done_evidence', 
+            'start_date', 
+            'deadline', 
+            'project', 
+            'role', 
+            'circle'
+        ]
+
+class KummitmentForm(forms.ModelForm):
+    class Meta:
+        model = Kummitment
+        fields = [
+            'task', 'kummitor', 
+            'success_actions', 'next_action', 
+            'possible_obstacles', 'minutes_estimate', 
+            'start', 'deadline', 'energy_type', 
+            'week_scheduled', 'day_scheduled', 
+            'time_scheduled', 'status', 'specific', 
+            'measurable', 'achievable', 'relevant', 
+            'timebound', 'healthy', 
+            'wealthy', 'wise', 'connected', 
+            'reflection', 'needhelp'
+        ]
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = [
+            'name', 'circle', 'client',
+            'related_roles', 'gig_finding',
+            'gig_doing', 'gig_management', 'gig_value',
+            'gig_value_details', 'description',
+            'expected_duration', 'start_date',
+            'deadline', 'project_lead', 'project_manager',
+            'objectives', 'key_results',
+            'stage', 'status', 'weekly_report'
+        ]

@@ -1,7 +1,98 @@
 {% extends 'base.html' %}
 
 {% block breadcrumb %}
+    <li class="breadcrumb-item active">Kummit</li>
 {% endblock %}
 
 {% block content %}
+    <h1>Learning, Earning, and Problem Solving</h1> <br>
+    <div class="container-fluid" style="max-width:400px">
+        <blockquote class="blockquote">
+        <p>
+            <em>"Nothing will work unless you do." <br> - Maya Angelou</em>
+        </p>
+        </blockquote>
+    </div>
+
+    <div class="container-fluid" style="max-width:750px;">
+        <a class="btn btn-block btn-lg" href="{% url 'task-create' %}" role="button" style="color: #FFFFFF; background-color: #564840; border-color: #FFFFFF;">Create a Task</a>
+        <a class="btn btn-block btn-lg" href="{% url 'kummitment-make' %}" role="button" style="color: #FFFFFF; background-color: #006F3A; border-color: #FFFFFF;">Make a Kummitment</a>
+    </div> 
+    
+    <br>
+    <br>
+
+    <div class="container-fluid" style="max-width:900px">
+        <h3>Tunapanda Governance</h3>
+        <p><a href="https://docs.google.com/document/d/1uuvpYOPj6CpSqdCJlWYx1h3NTlSZOz3D7V_jR-_Ez54/edit?usp=sharing" target='_blank'>Tunapanda Community Charter</a>, <a href="https://github.com/tunapanda/Pandacracy-Constitution" target="_blank">Pandacracy Constitution</a></p>
+
+        <blockquote class="blockquote">
+            <p>
+            <em>"We prefer self-government with danger to servitude in tranquility." <br> - Kwame Nkrumah</em>
+            </p>
+        </blockquote>
+        <br>
+        <h3>Tunapanda Structure</h3>
+        <p><a href="{% url 'circle-list' %}">Circles</a>, <a href="{% url 'role-list' %}">Roles</a></p>
+        <br>
+
+        <h3>Tunapanda Activities</h3>
+        <p>
+            Projects, <a href="{% url 'task-list' %}">Tasks</a>, <a href="{% url 'kummitment-list' %}">Kummitments</a>
+        </p>
+        <blockquote class="blockquote">
+            <em>“There are three qualities that make someone a true professional. These are the ability to work unsupervised, the ability to certify the completion of a job or task and, finally, the ability to behave with integrity at all times.”</em> <br>
+            ― Subroto Bagchi
+        </blockquote>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h1>Tunapanda Member Growth [coming soon!]</h1>
+    <p>
+        Tunapanda Members want to grow in many dimensions. We always look for the win-win-win: improving the world, improving our communities, and improving ourselves. Thus, each of us does what we can to become more <strong>healthy, wealthy, wise, and connected</strong> while ensuring Tunapanda and the people we work with are better off than we were yesterday.
+    </p>
+    <blockquote class="blockquote">
+        <p>
+        <em>"I think it is possible for ordinary people to choose to be extraordinary." <br> - Elon Musk</em>
+        </p>
+    </blockquote>
+    <br>
+
+    <div class="container-fluid" style="max-width:900px">
+        <h3>Healthy Members</h3>
+        
+        <blockquote class="blockquote">
+            <p>
+            <em>"Early to bed and early to rise, makes a man healthy, wealthy, and wise." <br> - Benjamin Franklin</em>
+            </p>
+        </blockquote>
+        
+        <br>
+        <h3>Wealthy Members</h3>
+        <blockquote class="blockquote">
+            <p>
+                <em>In short, the way to wealth, if you desire it, is as plain as the way to market. It depends chiefly on two words: industry and frugality. Waste neither time nor money, but make the best use of both.<br> - Benjamin Franklin</em>
+            </p>
+        </blockquote>
+        <br>
+
+        <h3>Wise Members</h3>
+        <blockquote class="blockquote">
+            <p>
+                <em>Try to be a rainbow in someone’s cloud. <br> - Maya Angelou</em>
+            </p>
+        </blockquote>
+
+        <h3>Connected Members</h3>
+        <blockquote class="blockquote">
+            <p>
+                <em>
+                    This is the true joy in life, the being used for a purpose recognized by yourself as a mighty one; the being thoroughly worn out before you are thrown on the scrap heap; the being a force of Nature instead of a feverish selfish little clod of ailments and grievances complaining that the world will not devote itself to making you happy. <br><br>
+                    I am of the opinion that my life belongs to the community, and as long as I live, it is my privilege to do for it whatever I can. I want to be thoroughly used up when I die, for the harder I work, the more I live. Life is no ‘brief candle’ to me. It ia a sort of splendid torch which I have got hold of for a moment, and I want to make it burn as brightly as possible before handing it on to the future generations. <br>
+                    - George Bernard Shaw
+                </em>
+            </p>
+        </blockquote>
+    </div>
 {% endblock %}

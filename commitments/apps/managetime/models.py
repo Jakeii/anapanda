@@ -65,7 +65,7 @@ class Role(models.Model):
     def __str__(self):
         return self.name
 
-class Client(models.Model):\
+class Client(models.Model):
     name = models.CharField(max_length=60)
 
     created_at = models.DateTimeField(null=True, auto_now_add=True)
@@ -81,7 +81,8 @@ class Project(models.Model):
     name = models.CharField(max_length=60, unique=True)
 
     circle = models.ForeignKey('Circle', on_delete=models.PROTECT)
-    client = models.ForeignKey('Client', null=True, related_name='project_owner')
+    client = models.ForeignKey('Client', on_delete=models.PROTECT, null=True, related_name='project_owner')
+
     related_roles = models.ForeignKey('Role', null=True, db_column="relatedroles", related_name="projects", on_delete=models.PROTECT)
     
     gig_finding = models.CharField(max_length=60, null=True) # Only show if there's a client. Need ForeignKey to Members plus % breakdown
@@ -91,7 +92,7 @@ class Project(models.Model):
     gig_value_details = models.CharField(null=True, max_length=600) # Show what each deliverable is worth as a %, automatically calculationg from total gig
     description = models.TextField(max_length=1000)
     
-    expected_duration = models.TextField(max_length=100, db_column="expectedduration")
+    expected_duration = models.TextField(max_length=100, null=True, db_column="expectedduration")
     start_date = models.DateTimeField(db_column="startdate")
     deadline = models.DateTimeField()
     
