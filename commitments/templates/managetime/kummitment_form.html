@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block extrajs %}
+<script type="text/javascript">
+  $(function(){
+    $('#id_start').datepicker({
+      format: "dd/mm/yyyy"
+    });
+    $('#id_deadline').datepicker({
+      format: "dd/mm/yyyy"
+    });
+  });
+</script>
+{% endblock extrajs %}
 
 {% block breadcrumb %}
 <li class="breadcrumb-item"><a href="{% url 'kummithome' %}">Kummit</a></li>
@@ -9,22 +22,19 @@
 {% endblock %}
 
 {% block content %}
-
-<div class="row w-50">
-  <div class="col-sm-12 col-md-12 col-lg-12">
-    <h3 class="text-center">"Define Kummitment"</h3>
-        {% if user.is_authenticated %}
-        <p>Kummitment by: {{ user.username }}<p>
-        {% else %}
-        <h2>Login, please</h2>
-        {% endif %}
-        <form method="POST">
-          {% csrf_token %}
-          <table border="1">
-            {% crispy form %}
-          </table>
-      </form>
+  <div class="row w-50">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h3 class="text-center">"Define Kummitment"</h3>
+          {% if user.is_authenticated %}
+          <p>Kummitment by: {{ user.username }}<p>
+          {% else %}
+          <h2>Login, please</h2>
+          {% endif %}
+          <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% bootstrap_button "Make Kummitment" button_type="submit" button_class="btn-primary" %}          
+        </form>
+    </div>
   </div>
-</div>
-
 {% endblock %}

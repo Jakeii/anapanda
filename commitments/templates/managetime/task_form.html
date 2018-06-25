@@ -5,8 +5,12 @@
 {% block extrajs %}
 <script type="text/javascript">
   $(function(){
-    $('#id_start_date').datepicker();
-    $('#id_deadline').datepicker();
+    $('#id_start_date').datepicker({
+      format: "dd/mm/yyyy"
+    });
+    $('#id_deadline').datepicker({
+      format: "dd/mm/yyyy"
+    });
   });
 </script>
 {% endblock extrajs %}
