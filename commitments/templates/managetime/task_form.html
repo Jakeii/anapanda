@@ -2,6 +2,15 @@
 
 {% load bootstrap4 %}
 
+{% block extrajs %}
+<script type="text/javascript">
+  $(function(){
+    $('#id_start_date').datepicker();
+    $('#id_deadline').datepicker();
+  });
+</script>
+{% endblock extrajs %}
+
 {% block breadcrumb %}
 <li class="breadcrumb-item"><a href="{% url 'kummithome' %}">Kummit</a></li>
 <li class="breadcrumb-item"><a href="{% url 'task-list' %}">Tasks</a></li>

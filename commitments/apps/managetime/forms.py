@@ -1,6 +1,8 @@
 from django import forms
 from .models import Circle, Role, Task, Kummitment, Project
 
+from django.conf import settings
+
 class CircleForm(forms.ModelForm):
     class Meta:
         model = Circle
@@ -40,6 +42,11 @@ class TaskForm(forms.ModelForm):
             'role', 
             'circle'
         ]
+
+    def __init__(self, *args, **kwargs):
+        super(TaskForm, self).__init__(*args, **kwargs)
+
+        self.fields['start_date'].input_formats = settings.DATE_INPUT_FORMATS
 
 class KummitmentForm(forms.ModelForm):
     class Meta:

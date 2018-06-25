@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from django.conf.global_settings import DATE_INPUT_FORMATS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +26,8 @@ SECRET_KEY = 'ia)5hktid)0mu@tn(ap$*o+e4!lpl2o^*z0^8gm&jpb94*wg_n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = []
+
+DATE_INPUT_FORMATS += ['%d-%m-%Y', '%Y-%m-%d']
 
 # Application definition
 

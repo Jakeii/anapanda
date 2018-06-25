@@ -118,7 +118,7 @@ class Task(models.Model):
     description = models.TextField("Task description", help_text="Explain what will need to happen in order for this task to be accomplished", max_length=600)
     done_evidence = models.TextField("Evidence of done", db_column="doneevidence", help_text="What deliverables, links, assertions (by clients, partners, or Members), or other evidence are required to show completion of this task?", max_length=600, blank=True, null=True)
     
-    start_date = models.DateTimeField("Startline", db_column="startdate", help_text="When could work begin?", default=timezone.now)
+    start_date = models.DateTimeField("Startline", db_column="startdate", help_text="When could work begin?")
     deadline = models.DateTimeField("Deadline", auto_now_add=False, blank=True, null=True)
     
     project = models.ForeignKey("Project", help_text="If this task is for a project, which project?", on_delete=models.PROTECT, blank=True, null=True)
