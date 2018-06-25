@@ -60,8 +60,14 @@
       </ol>
 
       {% block content %}
-      {% endblock %}  
+      {% endblock %}
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        &copy; Anapanda {% now "Y" %}
+      </div>
+    </footer>
 
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>

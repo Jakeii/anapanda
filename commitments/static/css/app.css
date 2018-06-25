@@ -27,3 +27,9 @@ blockquote p {
     font-size: 14px;
     color: #564840;
 }
+
+
+.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
