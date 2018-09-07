@@ -1,0 +1,8 @@
+<table class="table">
+{{#each model as |task|}}
+  <tr>
+    <td>{{#link-to 'tasks.single' task}}{{task.subject}}{{/link-to}}</td>
+    <td>{{task.description}}</td>
+  </tr>
+{{/each}}
+</table>

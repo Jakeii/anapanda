@@ -1,0 +1,13 @@
+{{#bs-form formLayout="horizontal" model=model onSubmit=(action "submit") as |form|}}
+  {{form.element controlType="text" label="Task Name" placeholder="Task Name" property="subject" helpText="Write a short name describing the task"}}
+  {{form.element controlType="textarea" label="Task Description" placeholder="Task Description" property="description" helpText="Explain what will need to happen in order for this task to be accomplished"}}
+  {{form.element controlType="textarea" label="Evidence of Done" placeholder="Evidence of Done" property="done_evidence" helpText="What deliverables, links, assertions (by clients, partners, or Members), or other evidence are required to show completion
+  of this task?"}}
+  {{form.element controlType="date" label="Startline" placeholder="Startline" property="start_date" helpText="When could work begin?"}}
+  {{form.element controlType="date" label="Deadline" placeholder="Deadline" property="deadline" helpText=""}}
+  {{form.element controlType="text" label="Project" placeholder="Project" property="project" helpText="If this task is for a project, which project?"}}
+  {{form.element controlType="text" label="Role" placeholder="Role" property="role" helpText="If this task is for a role, which project?"}}
+  {{form.element controlType="text" label="Circle" placeholder="Cicle" property="circle" helpText="If this task is for a circle, which project?"}}
+
+  {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
+{{/bs-form}}
