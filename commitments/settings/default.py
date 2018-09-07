@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'commitments.apps.accounts',
     'commitments.apps.managetime',
 
-    'bootstrap4'
+    'bootstrap4',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,11 @@ STATICFILES_DIRS = [
 
 LOGOUT_REDIRECT_URL = 'kummithome'
 LOGIN_REDIRECT_URL = 'kummithome'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
