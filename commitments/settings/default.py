@@ -42,10 +42,13 @@ INSTALLED_APPS = [
     'commitments.apps.accounts',
     'commitments.apps.managetime',
 
-    'bootstrap4'
+    'bootstrap4',
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,3 +135,17 @@ STATICFILES_DIRS = [
 
 LOGOUT_REDIRECT_URL = 'kummithome'
 LOGIN_REDIRECT_URL = 'kummithome'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:4200'
+)

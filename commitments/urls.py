@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 
+from django.conf.urls import include
+
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 #Putting login required here for now
@@ -47,4 +49,8 @@ urlpatterns = [
 
 urlpatterns += [
     path('admin/', admin.site.urls),
+]
+
+urlpatterns += [
+    path('api/v1/', include('commitments.apps.rest_api.urls'))
 ]
