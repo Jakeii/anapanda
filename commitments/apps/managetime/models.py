@@ -125,7 +125,7 @@ class Task(models.Model):
     role = models.ForeignKey("Role", help_text="If this task is for a role, which role?", on_delete=models.PROTECT, blank=True, null=True)
     circle = models.ForeignKey("Circle", help_text="If this task is for a circle, which circle?", on_delete=models.PROTECT, blank=True, null=True)
     
-    created_by = models.CharField(max_length=60)
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.PROTECT, related_name="created_tasks")
 
     last_update = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(null=True, auto_now_add=True)
