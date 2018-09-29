@@ -1,6 +1,10 @@
-import DS from 'ember-data';
+import { Model, attr, hasMany } from 'ember-data';
 
-export default DS.Model.extend({
-  email: DS.attr(),
-  username: DS.attr()
+export default Model.extend({
+  email: attr(),
+  username: attr(),
+  circles: hasMany('circle'),
+  roles: hasMany('role'),
+  kummitments: hasMany('kummitments'),
+  tasks: hasMany('tasks')
 });

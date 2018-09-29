@@ -1,15 +1,15 @@
-import DS from 'ember-data';
+import { Model, attr, belongsTo } from 'ember-data';
 
-export default DS.Model.extend({
-  subject: DS.attr(),
-  description: DS.attr(),
-  done_evidence: DS.attr(),
-  start_date: DS.attr(),
-  deadline: DS.attr(),
-  project: DS.attr(),
-  role: DS.attr(),
-  circle: DS.attr(),
-  created_by: DS.attr(),
-  last_update: DS.attr(),
-  created_at: DS.attr()
+export default Model.extend({
+  subject: attr(),
+  description: attr(),
+  doneEvidence: attr(),
+  startDate: attr(),
+  deadline: attr(),
+  project: belongsTo('project'),
+  role: belongsTo('role'),
+  circle: belongsTo('circle'),
+  createdBy: belongsTo('user'),
+  lastUpdate: attr(),
+  createdAt: attr()
 });
