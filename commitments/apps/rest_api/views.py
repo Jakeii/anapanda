@@ -31,7 +31,7 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class KummitmentList(generics.ListCreateAPIView):
     queryset = Kummitment.objects.all()
-    serializer_class = KummitmentSerializer,
+    serializer_class = KummitmentSerializer
 
 
 class KummitmentDetail(generics.RetrieveUpdateDestroyAPIView):
