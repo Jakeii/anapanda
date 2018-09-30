@@ -13,8 +13,10 @@ Router.map(function() {
     this.route('make');
     this.route('single', { path: '/:id' })
   });
+  this.route('calendar');
   this.route('circles');
   this.route('roles');
+  this.route('projects');
   this.route('kummitments');
 });
 
