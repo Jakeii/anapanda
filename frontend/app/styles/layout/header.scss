@@ -1,0 +1,49 @@
+
+.primary-header {
+  margin-top: 1rem;
+  border-top: $border-light-grey;
+  border-bottom: $border-light-grey;
+
+  .navbar-brand {
+    color: $secondary-brown;
+    font-weight: 800;
+  }
+}
+
+.account-menu a {
+  color: $secondary-brown;
+}
+
+.main-navigation {
+  margin-top: 2em;
+
+  border-bottom: none;
+
+  .nav-item {
+    margin-bottom: -3px;
+  }
+
+  .nav-link {
+    color: $secondary-brown;
+    font-size: 0.9rem;
+    padding: 0.3rem 3rem;
+
+    transition: border-bottom .4s ease;
+
+    border: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border: none;
+    border-bottom: 3px solid $primary-green;
+    color: inherit;
+    font-weight: 600;
+  }
+
+  .nav-link:hover {
+    border: none;
+    border-bottom: 3px solid $primary-light-green;
+  }
+}

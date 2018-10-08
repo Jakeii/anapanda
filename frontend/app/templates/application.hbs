@@ -1,31 +1,31 @@
-<header class="primary-header">
+<div class="container">
+  <header class="primary-header">
 
-</header>
-<nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #006F3A;">
-  <div class="container">
-    {{#link-to 'index' class="navbar-brand" style="color: #FFFFFF;"}}Tunapanda Kummit{{/link-to}}
-    <div class="mr-auto btn-group btn-group-sm" role="group" aria-label="Portal and Swag">
+    <nav class="navbar">
+
+    {{#link-to 'index' class="navbar-brand"}}Kummit{{/link-to}}
+    {{!-- <div class="mr-auto btn-group btn-group-sm" role="group" aria-label="Portal and Swag">
       <a class="btn btn-primary" href="http://portal.tunapanda.org" target="_blank" role="button" style="background-color: #564840; border-color: #FFFFFF;">Portal</a>
       <a class="btn btn-primary" target="_blank" href="http://xavierproject.tunapanda.org" role="button" style="background-color: #6FCF3F; border-color: #FFFFFF;">Swag</a>
-    </div>
-    <ul class="nav navbar-nav">
+    </div> --}}
+    <ul class="account-menu nav navbar-nav">
       <li class="nav-item dropdown">
         {{#if me.isAuthenticated }}
-          <BsDropdown @tagName="a" as |dd|>
-            <dd.toggle>{{ me.user.username }} <span class="caret"></span></dd.toggle>
-            <dd.menu as |menu|>
-              <menu.item>
-                {{#menu.link-to "index"}}My Account{{/menu.link-to}}
-              </menu.item>
-              <menu.item>
-                {{#menu.link-to "index"}}Change Password{{/menu.link-to}}
-              </menu.item>
-              <menu.divider />
-              <menu.item>
-                {{#menu.link-to "index"}}Log Out{{/menu.link-to}}
-              </menu.item>
-            </dd.menu>
-          </BsDropdown>
+        <BsDropdown @tagName="a" as |dd|>
+          <dd.toggle>{{ me.user.username }} <span class="caret"></span></dd.toggle>
+          <dd.menu as |menu|>
+            <menu.item>
+              {{#menu.link-to "index"}}My Account{{/menu.link-to}}
+            </menu.item>
+            <menu.item>
+              {{#menu.link-to "index"}}Change Password{{/menu.link-to}}
+            </menu.item>
+            <menu.divider />
+            <menu.item>
+              {{#menu.link-to "index"}}Log Out{{/menu.link-to}}
+            </menu.item>
+          </dd.menu>
+        </BsDropdown>
         {{else}}
         <form class="form-inline ml-auto">
           {{#link-to 'login' class="btn btn-outline-secondary"}}Log in{{/link-to}}
@@ -34,23 +34,25 @@
         {{/if}}
       </li>
     </ul>
-  </div>
-</nav>
+    </nav>
+    <ul class="main-navigation nav nav-tabs">
+      <li class="nav-item">
+        {{#link-to 'calendar' class="nav-link"}}Calendar{{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'tasks' class="nav-link"}}Tasks{{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'projects' class="nav-link"}}Projects{{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'kummitments' class="nav-link"}}Kummitments{{/link-to}}
+      </li>
+    </ul>
+  </header>
+</div>
+
 <div class="container">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      {{#link-to 'calendar' class="nav-link"}}Calendar{{/link-to}}
-    </li>
-    <li class="nav-item">
-      {{#link-to 'tasks' class="nav-link"}}Tasks{{/link-to}}
-    </li>
-    <li class="nav-item">
-      {{#link-to 'projects' class="nav-link"}}Projects{{/link-to}}
-    </li>
-    <li class="nav-item">
-      {{#link-to 'kummitments' class="nav-link"}}Kummitments{{/link-to}}
-    </li>
-  </ul>
   {{outlet}}
 </div>
 
