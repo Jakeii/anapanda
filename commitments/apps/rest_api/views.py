@@ -41,7 +41,7 @@ class KummitmentDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class ProjectList(generics.ListCreateAPIView):
     queryset = Project.objects.all()
-    serializer_class = ProjectSerializer,
+    serializer_class = ProjectSerializer
     filter_backends = (SearchFilter,)
     search_fields = ['name']
 
@@ -53,7 +53,7 @@ class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class RoleList(generics.ListCreateAPIView):
     queryset = Role.objects.all()
-    serializer_class = RoleSerializer,
+    serializer_class = RoleSerializer
     filter_backends = (SearchFilter,)
     search_fields = ['name']
 
@@ -65,7 +65,7 @@ class RoleDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class CircleList(generics.ListCreateAPIView):
     queryset = Circle.objects.all()
-    serializer_class = CircleSerializer,
+    serializer_class = CircleSerializer
     filter_backends = (SearchFilter,)
     search_fields = ['name']
 
