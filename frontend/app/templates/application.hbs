@@ -36,14 +36,14 @@
     </ul>
     </nav>
     <ul class="main-navigation nav nav-tabs">
-      <li class="nav-item">
+      <li class="nav-item mr-auto">
         {{#link-to 'calendar' class="nav-link"}}Calendar{{/link-to}}
       </li>
       <li class="nav-item">
-        {{#link-to 'tasks' class="nav-link"}}Tasks{{/link-to}}
+        {{#link-to 'projects' class="nav-link"}}Projects{{/link-to}}
       </li>
       <li class="nav-item">
-        {{#link-to 'projects' class="nav-link"}}Projects{{/link-to}}
+        {{#link-to 'tasks' class="nav-link"}}Tasks{{/link-to}}
       </li>
       <li class="nav-item">
         {{#link-to 'kummitments' class="nav-link"}}Kummitments{{/link-to}}
@@ -52,7 +52,7 @@
   </header>
 </div>
 
-<div class="container">
+<div class="main-content container">
   {{outlet}}
 </div>
 

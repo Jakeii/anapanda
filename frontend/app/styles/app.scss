@@ -2,6 +2,7 @@
 @import "common/variables";
 
 $primary: $primary-green;
+$secondary: $secondary-brown;
 
 @import "ember-bootstrap/bootstrap";
 
@@ -13,3 +14,7 @@ $primary: $primary-green;
 @import "ember-power-select";
 @import "ember-basic-dropdown";
 @import "ember-power-calendar";
+
+.main-content {
+  margin-top: 2rem;
+}

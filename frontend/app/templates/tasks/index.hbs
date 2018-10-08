@@ -1,9 +1,37 @@
 {{#link-to "tasks.make" class="btn btn-primary"}}New Task{{/link-to}}
-<table class="table">
-{{#each model as |task|}}
-  <tr>
-    <td>{{#link-to 'tasks.single' task}}{{task.subject}}{{/link-to}}</td>
-    <td>{{task.description}}</td>
-  </tr>
-{{/each}}
-</table>
+<div class="row">
+  <div class="col-3">
+    <h2>Filters</h2>
+    {{#bs-button-group value=buttonGroupValue type="checkbox" onChange=(action (mut buttonGroupValue)) as |bg|}}
+      {{#bg.button type="primary" value=1}}Related to Me{{/bg.button}}
+    {{#bg.button type="primary" value=2}}Unkummited{{/bg.button}}
+    {{/bs-button-group}}
+    <h4>Circles</h4>
+    <h4>Projects</h4>
+  </div>
+  <div class="col-9">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Description</th>
+          <th>Circle</th>
+          <th>Kumittor</th>
+          <th>Deadline</th>
+          <th></th>
+        </tr>
+      </thead>
+      {{#each model as |task|}}
+      <tr>
+        <td>{{#link-to 'tasks.single' task}}{{task.subject}}{{/link-to}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.circle.name}}</td>
+        <td>{{#if task.kummitor.username}}{{task.kummitor.username}}{{else}}No One{{/if}}</td>
+        <td>{{moment-format task.deadline 'DD/MM/YYYY'}}</td>
+        <td><BsButton @type="primary" @size="sm">Kummit!</BsButton></td>
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
+
