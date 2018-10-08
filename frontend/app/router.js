@@ -17,7 +17,10 @@ Router.map(function() {
   this.route('circles');
   this.route('roles');
   this.route('projects');
-  this.route('kummitments');
+  this.route('kummitments', { path: 'kummitments' }, function() {
+    this.route('make');
+    this.route('single', { path: '/:id' });
+  });
 });
 
 export default Router;

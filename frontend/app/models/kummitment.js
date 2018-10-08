@@ -6,18 +6,18 @@ export default Model.extend({
   task: belongsTo('task'),
   kummitor: belongsTo('user'),
 
-  success_actions: attr(),
-  next_action: attr(),
-  possible_obstacles: attr(),
-  minutes_estimate: attr(),
+  successActions: attr(),
+  nextAction: attr(),
+  possibleObstacles: attr(),
+  minutesEstimate: attr(),
 
   start: attr(),
   deadline: attr(),
 
-  energy_type: attr(),
-  week_scheduled: attr(),
-  day_scheduled: attr(),
-  time_scheduled: attr(),
+  energyType: attr(),
+  weekScheduled: attr(),
+  dayScheduled: attr(),
+  time_Scheduled: attr(),
 
   status: attr(),
   specific: attr(),
@@ -35,6 +35,6 @@ export default Model.extend({
   needhelp: attr(),
   problem_needing_help: attr(),
 
-  last_updated: attr(),
-  created_at: attr()
+  lastUpdated: attr(),
+  createdAt: attr()
 });

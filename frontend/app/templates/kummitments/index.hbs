@@ -1,0 +1,9 @@
+{{#link-to "kummitments.make" class="btn btn-primary"}}New Kummitment{{/link-to}}
+<table class="table">
+{{#each model as |kummitment|}}
+  <tr>
+    <td>{{#link-to 'kummitments.single' kummitment}}{{kummitment.task.subject}}{{/link-to}}</td>
+    <td>{{kummitment.description}}</td>
+  </tr>
+{{/each}}
+</table>
