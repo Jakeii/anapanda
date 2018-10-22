@@ -16,7 +16,10 @@ Router.map(function() {
   this.route('calendar');
   this.route('circles');
   this.route('roles');
-  this.route('projects');
+  this.route('projects', { path: 'projects' }, function() {
+    this.route('make');
+    this.route('single', { path: '/:id' });
+  });
   this.route('kummitments', { path: 'kummitments' }, function() {
     this.route('make');
     this.route('single', { path: '/:id' });

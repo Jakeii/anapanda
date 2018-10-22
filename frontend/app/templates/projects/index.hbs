@@ -1,0 +1,33 @@
+{{#link-to "projects.make" class="btn btn-primary"}}New Project{{/link-to}}
+<div class="row">
+  <div class="col-3">
+    <h2>Filters</h2>
+    {{#bs-button-group value=buttonGroupValue type="checkbox" onChange=(action (mut buttonGroupValue)) as |bg|}}
+      {{#bg.button type="primary" value=1}}Related to Me{{/bg.button}}
+    {{#bg.button type="primary" value=2}}Unkummited{{/bg.button}}
+    {{/bs-button-group}}
+    <h4>Circles</h4>
+    <h4>Projects</h4>
+  </div>
+  <div class="col-9">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Circle</th>
+          <th>Deadline</th>
+        </tr>
+      </thead>
+      {{#each model as |project|}}
+      <tr>
+        <td>{{#link-to 'projects.single' project}}{{project.name}}{{/link-to}}</td>
+        <td>{{project.description}}</td>
+        <td>{{project.circle.name}}</td>
+        <td>{{moment-format project.deadline 'DD/MM/YYYY'}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
+
