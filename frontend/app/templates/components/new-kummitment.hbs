@@ -1,0 +1,79 @@
+<BsForm @formLayout="horizontal" @model={{kummitment}} @onSubmit={{action submit}} as |form|>
+  <form.element @label="Task" @property="task" as |el|>
+    <DataPowerSelect @modelName='task' @onchange={{action (mut el.value)}} @selected={{el.value}} @placeholder="Search Tasks..."
+      as |task|>
+      {{task.subject}}
+    </DataPowerSelect>
+  </form.element>
+  <form.element @label="Kummitor" @property="kummitor" as |el|>
+    <DataPowerSelect @modelName='user' @onchange={{action (mut el.value)}} @selected={{el.value}} @placeholder="Search users..."
+      as |user|>
+      {{user.username}}
+    </DataPowerSelect>
+  </form.element>
+  <form.element @controlType="textarea" @label="Success Action" @placeholder="Success Action" @property="successActions" />
+  <form.element @controlType="textarea" @label="Next Action" @placeholder="Next Action" @property="nextAction" />
+  <form.element @controlType="textarea" @label="Possible Obsticles" @placeholder="Possible Obsticles" @property="possibleObstacles" />
+  <form.element @controlType="text" @label="Minute Estimate" @placeholder="Minute Estimate" @property="minuteEstimate" />
+  <form.element @label="Start Date" @property="start" as |el|>
+    <PowerDatepicker @selected={{el.value}} @onSelect={{action (mut el.value) value="date"}} as |dp|>
+      <dp.trigger tabindex="-1">
+        <input id={{el.id}} type="text" class="form-control" value={{moment-format el.value 'DD/MM/YYYY'}}>
+      </dp.trigger>
+      <dp.content class="demo-datepicker-small">
+        {{dp.nav}}
+        {{dp.days}}
+      </dp.content>
+    </PowerDatepicker>
+  </form.element>
+  <form.element @label="Deadline" @property="deadline" as |el|>
+    <PowerDatepicker @selected={{el.value}} @onSelect={{action (mut el.value) value="date"}} as |dp|>
+      <dp.trigger tabindex="-1">
+        <input id={{el.id}} type="text" class="form-control" value={{moment-format el.value 'DD/MM/YYYY'}}>
+      </dp.trigger>
+      <dp.content class="demo-datepicker-small">
+        {{dp.nav}}
+        {{dp.days}}
+      </dp.content>
+    </PowerDatepicker>
+  </form.element>
+  <form.element @controlType="textarea" @label="Energy Type" @placeholder="Energy Type" @property="energyType" />
+  <form.element @controlType="textarea" @label="Week Scheduled" @placeholder="Week Scheduled" @property="weekScheduled" />
+
+  <form.element @label="Date Scheduled" @property="dayScheduled" as |el|>
+    <PowerDatepicker @selected={{el.value}} @onSelect={{action (mut el.value) value="date"}} as |dp|>
+      <dp.trigger tabindex="-1">
+        <input id={{el.id}} type="text" class="form-control" value={{moment-format el.value 'DD/MM/YYYY'}}>
+      </dp.trigger>
+      <dp.content class="demo-datepicker-small">
+        {{dp.nav}}
+        {{dp.days}}
+      </dp.content>
+    </PowerDatepicker>
+  </form.element>
+  <form.element @label="Time Scheduled" @property="timeScheduled" as |el|>
+    <PowerDatepicker @selected={{el.value}} @onSelect={{action (mut el.value) value="date"}} as |dp|>
+      <dp.trigger tabindex="-1">
+        <input id={{el.id}} type="text" class="form-control" value={{moment-format el.value 'DD/MM/YYYY'}}>
+      </dp.trigger>
+      <dp.content class="demo-datepicker-small">
+        {{dp.nav}}
+        {{dp.days}}
+      </dp.content>
+    </PowerDatepicker>
+  </form.element>
+  <form.element @controlType="text" @label="Status" @placeholder="Status" @property="status" />
+
+  <form.element @controlType="checkbox" @label="Specific" @placeholder="Specific" @property="specific" />
+  <form.element @controlType="checkbox" @label="Measureable" @placeholder="Measureable" @property="measureable" />
+  <form.element @controlType="checkbox" @label="Achievable" @placeholder="Achievable" @property="achievable" />
+  <form.element @controlType="checkbox" @label="Relevant" @placeholder="Relevant" @property="relevant" />
+  <form.element @controlType="checkbox" @label="Timebound" @placeholder="Timebound" @property="timebound" />
+
+  <form.element @controlType="textarea" @label="Healthy" @placeholder="Healthy" @property="healthy" />
+  <form.element @controlType="textarea" @label="Wealthy" @placeholder="Wealthy" @property="wealthy" />
+  <form.element @controlType="textarea" @label="Wise" @placeholder="Wise" @property="wise" />
+  <form.element @controlType="textarea" @label="Connected" @placeholder="Connected" @property="connected" />
+  <form.element @controlType="textarea" @label="Reflection" @placeholder="Reflection" @property="reflection" />
+  <BsButton @defaultText="Submit" @type="primary" @buttonType="submit" />
+</BsForm>
