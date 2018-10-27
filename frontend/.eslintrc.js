@@ -5,14 +5,16 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'ember'
+    'ember',
+    'cypress'
   ],
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended'
   ],
   env: {
-    browser: true
+    browser: true,
+    'cypress/globals': true
   },
   rules: {
   },
