@@ -1,8 +1,8 @@
-language: python
-python:
-- '3.6'
+language: node
 node:
-- '10.8'
+- '10.13'
+services:
+  postgresql
 sudo: false
 dist: trusty
 cache:
@@ -17,12 +17,21 @@ before_install:
   -in deploy_key.enc -out deploy_key -d
 - npm config set spin false
 install:
-- pip install -r requirements.pip
-- cd frontend && npm i -g npm@6.4 && npm ci && cd ../
+- npm ci --prefix ./api
+- npm ci --prefix ./app
+- knex migrate:latest --knexfile ./app/knexfile.js
 script:
-- python manage.py runserver --nothreading >> /dev/null &
-- cd frontend
-- npm run lint:js
-- npm start >> /dev/null &
-- npm run cypress:run
+- node api/index.js >> /dev/null &
+- npm run lint:js --prefix ./app
+- npm start --prefix ./app >> /dev/null &
+- npm run cypress:run --prefix ./app
 - kill $(jobs -p) || true
+deploy:
+  - providor: script
+    script: GIT_SSH_COMMAND="ssh -i ./deploy_key" git push $DEPLOY_REPO
+    on:
+      branch: master
+  - providor: script
+    script: GIT_SSH_COMMAND="ssh -i ./deploy_key" git push $DEPLOY_REPO
+    on:
+      branch: production

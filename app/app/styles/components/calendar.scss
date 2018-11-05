@@ -1,0 +1,11 @@
+.week-calendar {
+  display: flex;
+
+  .day-of-week {
+    flex: 0 0 (100% / 5);
+
+    h2 {
+      text-align: center;
+    }
+  }
+}

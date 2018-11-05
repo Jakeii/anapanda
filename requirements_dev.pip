@@ -1,3 +1,0 @@
--r requirements.pip
-
-ipython==6.4.0

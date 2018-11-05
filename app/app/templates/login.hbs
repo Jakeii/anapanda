@@ -1,0 +1,9 @@
+<div class="form-container">
+  <h1 class="page-title">Login</h1>
+  <BsForm @formLayout="horizontal" @model={{this}} @onSubmit={{action "submit"}} as |form|>
+    <form.element @controlType="text" @label="Username" @placeholder="Username" @property="username" />
+    <form.element @controlType="password" @label="Password" @placeholder="Password" @property="password" />
+
+    <BsButton @defaultText="Submit" @type="primary" @buttonType="submit" />
+  </BsForm>
+</div>

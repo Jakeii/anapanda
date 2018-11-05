@@ -1,0 +1,26 @@
+
+@import "common/variables";
+
+$primary: $primary-green;
+$secondary: $secondary-brown;
+
+@import "ember-bootstrap/bootstrap";
+
+@import "common/typography";
+@import "common/forms";
+
+@import "layout/header";
+
+@import "components/calendar";
+
+@import "ember-power-select";
+@import "ember-basic-dropdown";
+@import "ember-power-calendar";
+
+.main-content {
+  margin-top: 2rem;
+}
+
+.kummit-logo {
+  max-width: 40px;
+}

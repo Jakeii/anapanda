@@ -1,0 +1,11 @@
+{
+  "name": "kummit",
+  "version": "0.1.0",
+  "description": "",
+  "main": "api/index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "author": "",
+  "private": true
+}
